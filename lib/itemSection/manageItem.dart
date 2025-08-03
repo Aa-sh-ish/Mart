@@ -2,7 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:app1/itemSection/shimmer_widget.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:fluttertoast/fluttertoast.dart';
+// import 'package:fluttertoast/fluttertoast.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'add_item.dart';
 import '../models/user_model.dart';
@@ -67,15 +67,15 @@ class _ItemPage extends State<ItemPage> {
         actions: [
           TextButton(
             onPressed: () {
-              Fluttertoast.showToast(
-                msg: "Your Shop Name\n(*≧∀≦)ゞ",
-                toastLength: Toast.LENGTH_SHORT,
-                gravity: ToastGravity.CENTER,
-                timeInSecForIosWeb: 1,
-                backgroundColor: Colors.purple,
-                textColor: Colors.white,
-                fontSize: 16.0,
-              );
+              // Fluttertoast.showToast(
+              //   msg: "Your Shop Name\n(*≧∀≦)ゞ",
+              //   toastLength: Toast.LENGTH_SHORT,
+              //   gravity: ToastGravity.CENTER,
+              //   timeInSecForIosWeb: 1,
+              //   backgroundColor: Colors.purple,
+              //   textColor: Colors.white,
+              //   fontSize: 16.0,
+              // );
             },
             child: userModel.shopname == null
                 ? Container()

@@ -2,7 +2,7 @@ import 'package:app1/homePage.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:fluttertoast/fluttertoast.dart';
+// import 'package:fluttertoast/fluttertoast.dart';
 // import 'package:dummytest/homePage.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'models/feedback_model.dart';
@@ -225,15 +225,15 @@ class MapScreenState extends State<FeedbackPage> {
     feedModel.detail = details.text;
 
     await firebaseFirestore.collection("feedback").doc().set(feedModel.toMap());
-    Fluttertoast.showToast(
-      msg: "Feedback Submitted Successfully!\n( ͡° ͜ʖ ͡°)",
-      toastLength: Toast.LENGTH_SHORT,
-      gravity: ToastGravity.CENTER,
-      timeInSecForIosWeb: 1,
-      backgroundColor: Colors.deepPurple,
-      textColor: Colors.white,
-      fontSize: 16.0,
-    );
+    // Fluttertoast.showToast(
+    //   msg: "Feedback Submitted Successfully!\n( ͡° ͜ʖ ͡°)",
+    //   toastLength: Toast.LENGTH_SHORT,
+    //   gravity: ToastGravity.CENTER,
+    //   timeInSecForIosWeb: 1,
+    //   backgroundColor: Colors.deepPurple,
+    //   textColor: Colors.white,
+    //   fontSize: 16.0,
+    // );
     Navigator.pushAndRemoveUntil(
       (context),
       MaterialPageRoute(builder: (context) => const HomePage()),

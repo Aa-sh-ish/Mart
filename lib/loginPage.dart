@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:fluttertoast/fluttertoast.dart';
+// import 'package:fluttertoast/fluttertoast.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'registerPage.dart';
 import 'homePage.dart';
@@ -24,14 +24,14 @@ class _LoginPage extends State<LoginPage> {
         email: _email, password: _password);
       print('Login successful: user.uid = ${result.user?.uid}');
       setState(() => isLoading = false);
-      Fluttertoast.showToast(
-          msg: "(☞ﾟ∀ﾟ)☞ Success",
-          toastLength: Toast.LENGTH_SHORT,
-          gravity: ToastGravity.CENTER,
-          timeInSecForIosWeb: 1,
-          backgroundColor: Colors.green,
-          textColor: Colors.white,
-          fontSize: 16.0);
+      // Fluttertoast.showToast(
+      //     msg: "(☞ﾟ∀ﾟ)☞ Success",
+      //     toastLength: Toast.LENGTH_SHORT,
+      //     gravity: ToastGravity.CENTER,
+      //     timeInSecForIosWeb: 1,
+      //     backgroundColor: Colors.green,
+      //     textColor: Colors.white,
+      //     fontSize: 16.0);
       Navigator.push(
         context,
         MaterialPageRoute(builder: (context) => const HomePage()),
@@ -39,14 +39,14 @@ class _LoginPage extends State<LoginPage> {
     } catch (e) {
       setState(() => isLoading = false);
       print('Login failed: ${e.runtimeType} - ${e.toString()}');
-      Fluttertoast.showToast(
-          msg: "ｰ(  ｰ̀дｰ́ )Incorrect Credentials",
-          toastLength: Toast.LENGTH_SHORT,
-          gravity: ToastGravity.CENTER,
-          timeInSecForIosWeb: 1,
-          backgroundColor: Colors.redAccent,
-          textColor: Colors.white,
-          fontSize: 16.0);
+      // Fluttertoast.showToast(
+          // msg: "ｰ(  ｰ̀дｰ́ )Incorrect Credentials",
+          // toastLength: Toast.LENGTH_SHORT,
+          // gravity: ToastGravity.CENTER,
+          // timeInSecForIosWeb: 1,
+          // backgroundColor: Colors.redAccent,
+          // textColor: Colors.white,
+          // fontSize: 16.0);
     }
   }
 

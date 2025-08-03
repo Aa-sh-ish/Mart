@@ -3,7 +3,7 @@ import 'package:app1/analyticsSection/specificDate.dart';
 import 'package:app1/models/profit_model.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:fluttertoast/fluttertoast.dart';
+// import 'package:fluttertoast/fluttertoast.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../models/historylist_Display.dart';
@@ -189,15 +189,15 @@ class _SalesScreenState extends State<SalesScreen> {
                         ),
                       );
                     } else {
-                      Fluttertoast.showToast(
-                        msg: "Invalid Input",
-                        toastLength: Toast.LENGTH_SHORT,
-                        gravity: ToastGravity.CENTER,
-                        timeInSecForIosWeb: 1,
-                        backgroundColor: Colors.red,
-                        textColor: Colors.white,
-                        fontSize: 16.0,
-                      );
+                      // Fluttertoast.showToast(
+                      //   msg: "Invalid Input",
+                      //   toastLength: Toast.LENGTH_SHORT,
+                      //   gravity: ToastGravity.CENTER,
+                      //   timeInSecForIosWeb: 1,
+                      //   backgroundColor: Colors.red,
+                      //   textColor: Colors.white,
+                      //   fontSize: 16.0,
+                      // );
                     }
                   },
                   shape: RoundedRectangleBorder(

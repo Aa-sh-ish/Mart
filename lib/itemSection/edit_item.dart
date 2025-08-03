@@ -5,7 +5,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:fluttertoast/fluttertoast.dart';
+// import 'package:fluttertoast/fluttertoast.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:image_picker/image_picker.dart';
 import '../models/itemlist_Display.dart';
@@ -452,15 +452,15 @@ class MapScreenState extends State<EditItem>
                           _formkey.currentState!.save();
                           update(inameEditingController.text);
                         } else if (image == null) {
-                          Fluttertoast.showToast(
-                            msg: "Please Upload an Image!",
-                            toastLength: Toast.LENGTH_SHORT,
-                            gravity: ToastGravity.CENTER,
-                            timeInSecForIosWeb: 1,
-                            backgroundColor: Colors.red,
-                            textColor: Colors.white,
-                            fontSize: 16.0,
-                          );
+                          // Fluttertoast.showToast(
+                          //   msg: "Please Upload an Image!",
+                          //   toastLength: Toast.LENGTH_SHORT,
+                          //   gravity: ToastGravity.CENTER,
+                          //   timeInSecForIosWeb: 1,
+                          //   backgroundColor: Colors.red,
+                          //   textColor: Colors.white,
+                          //   fontSize: 16.0,
+                          // );
                         }
                       },
                       shape: RoundedRectangleBorder(
@@ -536,15 +536,15 @@ class MapScreenState extends State<EditItem>
         .collection('Items')
         .doc(olddate)
         .delete();
-    Fluttertoast.showToast(
-      msg: "Item Edited Successfully!\n(,,･`∀･)ﾉ",
-      toastLength: Toast.LENGTH_SHORT,
-      gravity: ToastGravity.CENTER,
-      timeInSecForIosWeb: 1,
-      backgroundColor: Colors.green,
-      textColor: Colors.white,
-      fontSize: 16.0,
-    );
+    // Fluttertoast.showToast(
+    //   msg: "Item Edited Successfully!\n(,,･`∀･)ﾉ",
+    //   toastLength: Toast.LENGTH_SHORT,
+    //   gravity: ToastGravity.CENTER,
+    //   timeInSecForIosWeb: 1,
+    //   backgroundColor: Colors.green,
+    //   textColor: Colors.white,
+    //   fontSize: 16.0,
+    // );
     Navigator.pushAndRemoveUntil(
       (context),
       MaterialPageRoute(builder: (context) => const ItemPage()),

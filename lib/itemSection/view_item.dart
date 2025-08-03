@@ -5,7 +5,7 @@ import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_speed_dial/flutter_speed_dial.dart';
-import 'package:fluttertoast/fluttertoast.dart';
+// import 'package:fluttertoast/fluttertoast.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../models/itemUpdate_model.dart';
 import '../models/itemlist_Display.dart';
@@ -807,15 +807,15 @@ class _ViewItemState extends State<ViewItem> {
         .doc('${DateTime.now()}')
         .set(profitModel.toMap());
     //dateRef.collection('Total Profit').doc('${DateTime.now()}').update(profitModel.toMap());
-    Fluttertoast.showToast(
-      msg: "Stock Added Successfully!\n☆ヾ(-∀・)*+☆",
-      toastLength: Toast.LENGTH_SHORT,
-      gravity: ToastGravity.CENTER,
-      timeInSecForIosWeb: 1,
-      backgroundColor: Colors.deepPurple,
-      textColor: Colors.white,
-      fontSize: 16.0,
-    );
+    // Fluttertoast.showToast(
+    //   msg: "Stock Added Successfully!\n☆ヾ(-∀・)*+☆",
+    //   toastLength: Toast.LENGTH_SHORT,
+    //   gravity: ToastGravity.CENTER,
+    //   timeInSecForIosWeb: 1,
+    //   backgroundColor: Colors.deepPurple,
+    //   textColor: Colors.white,
+    //   fontSize: 16.0,
+    // );
     Navigator.pushAndRemoveUntil(
       (context),
       MaterialPageRoute(builder: (context) => const ItemPage()),
@@ -874,15 +874,15 @@ class _ViewItemState extends State<ViewItem> {
         .set(profitModel.toMap());
     //dateRef.collection('Total Profit').doc('${DateTime.now()}').update(profitModel.toMap());
     userRef.collection('Total Profit').doc('1').update(profitModel.toMap());
-    Fluttertoast.showToast(
-      msg: "Stock Updated Successfully!\n(*≧∀≦)ゞ",
-      toastLength: Toast.LENGTH_SHORT,
-      gravity: ToastGravity.CENTER,
-      timeInSecForIosWeb: 1,
-      backgroundColor: Colors.deepPurple,
-      textColor: Colors.white,
-      fontSize: 16.0,
-    );
+    // Fluttertoast.showToast(
+    //   msg: "Stock Updated Successfully!\n(*≧∀≦)ゞ",
+    //   toastLength: Toast.LENGTH_SHORT,
+    //   gravity: ToastGravity.CENTER,
+    //   timeInSecForIosWeb: 1,
+    //   backgroundColor: Colors.deepPurple,
+    //   textColor: Colors.white,
+    //   fontSize: 16.0,
+    // );
     Navigator.pushAndRemoveUntil(
       (context),
       MaterialPageRoute(builder: (context) => const ItemPage()),
@@ -901,28 +901,28 @@ class _ViewItemState extends State<ViewItem> {
           .collection('Items')
           .doc('${widget.card.date}');
       docUser.delete();
-      Fluttertoast.showToast(
-        msg: "Item Deleted\n(｡•᎔•｡)",
-        toastLength: Toast.LENGTH_SHORT,
-        gravity: ToastGravity.CENTER,
-        timeInSecForIosWeb: 1,
-        backgroundColor: Colors.red,
-        textColor: Colors.white,
-        fontSize: 16.0,
-      );
+      // Fluttertoast.showToast(
+      //   msg: "Item Deleted\n(｡•᎔•｡)",
+      //   toastLength: Toast.LENGTH_SHORT,
+      //   gravity: ToastGravity.CENTER,
+      //   timeInSecForIosWeb: 1,
+      //   backgroundColor: Colors.red,
+      //   textColor: Colors.white,
+      //   fontSize: 16.0,
+      // );
       if (widget.card.img != null) {
         FirebaseStorage.instance.refFromURL('${widget.card.img}').delete();
       }
     } on PlatformException {
-      Fluttertoast.showToast(
-        msg: "Something went wrong!\n(｡•᎔•｡)",
-        toastLength: Toast.LENGTH_SHORT,
-        gravity: ToastGravity.CENTER,
-        timeInSecForIosWeb: 1,
-        backgroundColor: Colors.red,
-        textColor: Colors.white,
-        fontSize: 16.0,
-      );
+      // Fluttertoast.showToast(
+      //   msg: "Something went wrong!\n(｡•᎔•｡)",
+      //   toastLength: Toast.LENGTH_SHORT,
+      //   gravity: ToastGravity.CENTER,
+      //   timeInSecForIosWeb: 1,
+      //   backgroundColor: Colors.red,
+      //   textColor: Colors.white,
+      //   fontSize: 16.0,
+      // );
     }
     Navigator.push(
       context,

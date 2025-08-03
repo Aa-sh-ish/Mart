@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:fluttertoast/fluttertoast.dart';
+// import 'package:fluttertoast/fluttertoast.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../models/historylist_Display.dart';
 import '../models/user_model.dart';
@@ -24,11 +24,9 @@ class _ItemPage extends State<HistoryPage> {
   @override
   void initState() {
     super.initState();
-    FirebaseFirestore.instance
-        .collection("users")
-        .doc(user!.uid)
-        .get()
-        .then((value) {
+    FirebaseFirestore.instance.collection("users").doc(user!.uid).get().then((
+      value,
+    ) {
       this.userModel = UserModel.fromMap(value.data() ?? {});
       setState(() {});
     });
@@ -39,63 +37,67 @@ class _ItemPage extends State<HistoryPage> {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
-          leading: IconButton(
-            icon: const Icon(
-              Icons.arrow_back_rounded,
-              color: Colors.white,
-              size: 30,
-            ),
+        leading: IconButton(
+          icon: const Icon(
+            Icons.arrow_back_rounded,
+            color: Colors.white,
+            size: 30,
+          ),
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const HomePage()),
+            );
+          },
+        ),
+        backgroundColor: Color(0xFFE5E6EA), // slightly darker than white
+        title: Text(
+          'HISTORY',
+          style: GoogleFonts.poppins(color: Color(0xFF232323)),
+        ),
+        actions: [
+          TextButton(
             onPressed: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => const HomePage()));
+              // Fluttertoast.showToast(
+              //     msg: "Your Shop Name\n๑و•̀Δ•́)و",
+              //     toastLength: Toast.LENGTH_SHORT,
+              //     gravity: ToastGravity.CENTER,
+              //     timeInSecForIosWeb: 1,
+              //     backgroundColor: Colors.purple,
+              //     textColor: Colors.white,
+              //     fontSize: 16.0);
             },
-          ),
-          backgroundColor: Color(0xFFE5E6EA), // slightly darker than white
-          title: Text(
-            'HISTORY',
-            style: GoogleFonts.poppins(color: Color(0xFF232323)),
-          ),
-          actions: [
-            TextButton(
-              onPressed: () {
-                Fluttertoast.showToast(
-                    msg: "Your Shop Name\n๑و•̀Δ•́)و",
-                    toastLength: Toast.LENGTH_SHORT,
-                    gravity: ToastGravity.CENTER,
-                    timeInSecForIosWeb: 1,
-                    backgroundColor: Colors.purple,
-                    textColor: Colors.white,
-                    fontSize: 16.0);
-              },
-              child: userModel.shopname == null
-                  ? Container()
-                  : Text(
-                      "${userModel.shopname}",
-                      style: GoogleFonts.spaceMono(
-                        textStyle: const TextStyle(
-                            fontSize: 20,
-                            color: Colors.yellowAccent,
-                            //decoration: TextDecoration.underline,
-                            //decorationThickness: 1,
-                            decorationColor: Colors.white,
-                            fontWeight: FontWeight.w800),
+            child: userModel.shopname == null
+                ? Container()
+                : Text(
+                    "${userModel.shopname}",
+                    style: GoogleFonts.spaceMono(
+                      textStyle: const TextStyle(
+                        fontSize: 20,
+                        color: Colors.yellowAccent,
+                        //decoration: TextDecoration.underline,
+                        //decorationThickness: 1,
+                        decorationColor: Colors.white,
+                        fontWeight: FontWeight.w800,
                       ),
                     ),
-            ),
-            //new Icon(Icons.add_business_rounded, color: Colors.white, size: 30,),
-          ]),
+                  ),
+          ),
+          //new Icon(Icons.add_business_rounded, color: Colors.white, size: 30,),
+        ],
+      ),
       body: Container(
         padding: const EdgeInsets.all(20),
         color: Color(0xFFE5E6EA), // slightly darker than white
         //width: 200,
         child: ListView.builder(
-            scrollDirection: Axis.vertical,
-            itemCount: _hisslist.length,
-            itemBuilder: (context, index) {
-              final item = _hisslist[index];
-              return HistoryCard(item as hiss);
-            } //=> build(context),
-            ),
+          scrollDirection: Axis.vertical,
+          itemCount: _hisslist.length,
+          itemBuilder: (context, index) {
+            final item = _hisslist[index];
+            return HistoryCard(item as hiss);
+          }, //=> build(context),
+        ),
       ),
     );
   }

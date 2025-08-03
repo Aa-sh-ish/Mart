@@ -5,7 +5,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 
 import 'package:flutter/material.dart';
 
-import 'package:fluttertoast/fluttertoast.dart';
+// import 'package:fluttertoast/fluttertoast.dart';
 
 import 'package:google_fonts/google_fonts.dart';
 import 'loginPage.dart';
@@ -289,40 +289,40 @@ class _RegisterPage extends State<RegisterPage> {
       postDetailsToFireStore();
     } on FirebaseAuthException catch (e) {
       if (e.code == 'wea-password') {
-        Fluttertoast.showToast(
-          msg: "ｰ(  ｰ̀дｰ́ ) Weak Password",
-          toastLength: Toast.LENGTH_SHORT,
-          gravity: ToastGravity.CENTER,
-          timeInSecForIosWeb: 1,
-          backgroundColor: Colors.redAccent,
-          textColor: Colors.white,
-          fontSize: 16.0,
-        );
+        // Fluttertoast.showToast(
+        //   msg: "ｰ(  ｰ̀дｰ́ ) Weak Password",
+        //   toastLength: Toast.LENGTH_SHORT,
+        //   gravity: ToastGravity.CENTER,
+        //   timeInSecForIosWeb: 1,
+        //   backgroundColor: Colors.redAccent,
+        //   textColor: Colors.white,
+        //   fontSize: 16.0,
+        // );
         setState(() => isLoading = false);
       } else if (e.code == 'Email Existed')
         ;
       {
-        Fluttertoast.showToast(
-          msg: "ｰ(  ｰ̀дｰ́ ) Account Already Exist",
-          toastLength: Toast.LENGTH_SHORT,
-          gravity: ToastGravity.CENTER,
-          timeInSecForIosWeb: 1,
-          backgroundColor: Colors.redAccent,
-          textColor: Colors.white,
-          fontSize: 16.0,
-        );
+        // Fluttertoast.showToast(
+        //   msg: "ｰ(  ｰ̀дｰ́ ) Account Already Exist",
+        //   toastLength: Toast.LENGTH_SHORT,
+        //   gravity: ToastGravity.CENTER,
+        //   timeInSecForIosWeb: 1,
+        //   backgroundColor: Colors.redAccent,
+        //   textColor: Colors.white,
+        //   fontSize: 16.0,
+        // );
         setState(() => isLoading = false);
       }
     } catch (e) {
-      Fluttertoast.showToast(
-        msg: "Something Went Wrong",
-        toastLength: Toast.LENGTH_SHORT,
-        gravity: ToastGravity.CENTER,
-        timeInSecForIosWeb: 1,
-        backgroundColor: Colors.redAccent,
-        textColor: Colors.white,
-        fontSize: 16.0,
-      );
+      // Fluttertoast.showToast(
+      //   msg: "Something Went Wrong",
+      //   toastLength: Toast.LENGTH_SHORT,
+      //   gravity: ToastGravity.CENTER,
+      //   timeInSecForIosWeb: 1,
+      //   backgroundColor: Colors.redAccent,
+      //   textColor: Colors.white,
+      //   fontSize: 16.0,
+      // );
       setState(() => isLoading = false);
     }
   }
@@ -347,15 +347,15 @@ class _RegisterPage extends State<RegisterPage> {
     final Ref = await firebaseFirestore.collection("users").doc(user.uid);
     Ref.set(userModel.toMap());
     Ref.collection('Total Profit').doc('1').set(profitModel.toMap());
-    Fluttertoast.showToast(
-      msg: "Registration Successful",
-      toastLength: Toast.LENGTH_SHORT,
-      gravity: ToastGravity.CENTER,
-      timeInSecForIosWeb: 1,
-      backgroundColor: Colors.green,
-      textColor: Colors.white,
-      fontSize: 16.0,
-    );
+    // Fluttertoast.showToast(
+    //   msg: "Registration Successful",
+    //   toastLength: Toast.LENGTH_SHORT,
+    //   gravity: ToastGravity.CENTER,
+    //   timeInSecForIosWeb: 1,
+    //   backgroundColor: Colors.green,
+    //   textColor: Colors.white,
+    //   fontSize: 16.0,
+    // );
     setState(() => isLoading = false);
     Navigator.pushAndRemoveUntil(
       (context),
